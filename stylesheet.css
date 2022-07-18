@@ -24,10 +24,36 @@ p {
 	width:  550px;
 }
 
-/* Create four equal columns that floats next to each other */
+img {
+  border-radius:  50%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+h1 {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.me {
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height:  200px;
+}
+
 .column {
   float: left;
-  padding:  50px;
+  padding:  2%;
 }
 
 .left {
