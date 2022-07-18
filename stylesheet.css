@@ -30,23 +30,10 @@ img {
   max-height: 100%;
 }
 
-h1 {
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
-.me {
-  align-items: center;
-  justify-content: center;
+.me{
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
   width: 225px;
   height:  225px;
 }
