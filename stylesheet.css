@@ -43,6 +43,7 @@ body {
 
 p {
 	max-width:  35rem;
+  margin: 1rem;
 }
 
 h1 {
