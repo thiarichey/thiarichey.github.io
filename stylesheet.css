@@ -38,7 +38,6 @@ body {
   font-size: 4.5mm;
   display: flex;
   flex-direction:row;
-  align-items: start;
   flex-wrap: wrap;
 	font-weight:  lighter;
 }
@@ -69,5 +68,5 @@ ul {
   max-height:  15rem;
 }
 
-@media (min-width: 45rem) {
+@media (min-width: 30rem) {
 }
