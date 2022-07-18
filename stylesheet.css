@@ -38,7 +38,7 @@ body {
 }
 
 p {
-	width:  550px;
+	width:  35rem;
 }
 
 h1 {
@@ -72,8 +72,8 @@ img {
 	width:  75%;
 }
 
-@media screen and (max-width: 300px) {
-  .column {
-    width: 100%;
-  }
+@media (min-width: 45rem) {
+    main {
+        width: 40rem;
+    }
 }
