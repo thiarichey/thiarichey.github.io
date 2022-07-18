@@ -19,7 +19,7 @@ a:link {
 
 header {
   min-width:  15rem;
-  margin: 5rem;
+  margin: 3rem;
 }
 
 a:visited {
@@ -37,7 +37,6 @@ body {
 	font-family: 'cmu_serifroman';
   font-size: 4.5mm;
   display: flex;
-  flex-direction:row;
   flex-wrap: wrap;
 	font-weight:  lighter;
 }
@@ -54,19 +53,11 @@ img {
   border-radius:  50%;
   max-width: 100%;
   max-height: 100%;
+  margin: 0 auto;
+  width: 15rem;
+  height:  15rem;
 }
 
 ul {
   max-width: 30rem;
-}
-
-.me {
-  max-width: 50%;
-  max-height: 50%;
-  margin: 0 auto;
-  max-width: 15rem;
-  max-height:  15rem;
-}
-
-@media (min-width: 30rem) {
 }
