@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'cmu_serifroman';
+    src: url('cmuserif_roman_macroman/cmunrm-webfont.eot');
+    src: url('cmuserif_roman_macroman/cmunrm-webfont.eot?#iefix') format('embedded-opentype'),
+         url('cmuserif_roman_macroman/cmunrm-webfont.woff2') format('woff2'),
+         url('cmuserif_roman_macroman/cmunrm-webfont.woff') format('woff'),
+         url('cmuserif_roman_macroman/cmunrm-webfont.ttf') format('truetype'),
+         url('cmuserif_roman_macroman/cmunrm-webfont.svg#cmu_serifroman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+	font-family: 'cmu_serifroman';
+	font-weight:  lighter;
+}
+
+p {
+	width:  550px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  padding:  50px;
+}
+
+.left {
+	width:  25%;
+}
+
+.right {
+	width:  75%;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
