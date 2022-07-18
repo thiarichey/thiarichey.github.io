@@ -15,6 +15,23 @@
   box-sizing: border-box;
 }
 
+a:link {
+  color: #444B74; 
+  background-color: transparent; 
+  text-decoration: none;
+}
+
+a:visited {
+  color: #444B74;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #727BAC;
+  background-color: transparent;
+}
+
 body {
 	font-family: 'cmu_serifroman';
 	font-weight:  lighter;
@@ -22,6 +39,10 @@ body {
 
 p {
 	width:  550px;
+}
+
+h1 {
+  text-align: center;
 }
 
 img {
@@ -51,7 +72,7 @@ img {
 	width:  75%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 300px) {
   .column {
     width: 100%;
   }
