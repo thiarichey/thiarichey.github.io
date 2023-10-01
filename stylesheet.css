@@ -33,6 +33,11 @@ a:hover {
   background-color: transparent;
 }
 
+.column {
+  max-width:  35rem;
+  margin: 1rem;
+}
+
 body {
 	font-family: 'cmu_serifroman';
   font-size: 4.5mm;
@@ -41,13 +46,8 @@ body {
 	font-weight:  lighter;
 }
 
-p {
-	max-width:  35rem;
-  margin: 1rem;
-}
-
 h1 {
-  text-align: center;
+  text-align: left;
 }
 
 img {
