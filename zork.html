@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zork</title>
+    <style>
+        @font-face {
+            font-family: "VT323";
+            src: url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        }
+        body {
+            font-family: "VT323", monospace;
+            background-color: black;
+            color: #00FF00; /* Green text */
+            margin: 0;
+            padding: 0;
+        }
+        .vt323-regular {
+            font-family: "VT323", monospace;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        #initialText p, #output {
+            background-color: black;
+            padding: 10px;
+            margin-bottom: 10px;
+            overflow-x: auto; /* Allow horizontal scrolling if needed */
+            white-space: pre-wrap; /* Preserve line breaks */
+        }
+        textarea {
+            width: calc(100% - 20px); /* Adjust for padding */
+            height: auto; /* Auto height */
+            min-height: 100px; /* Minimum height */
+            margin-bottom: 10px;
+            background-color: black;
+            color: #00FF00;
+            border: none;
+            padding: 10px; /* Adjusted padding */
+            resize: vertical; /* Allow vertical resizing */
+            outline: none; /* Remove outline */
+            font-family: "VT323", monospace; /* Monospaced font */
+            font-size: 16px;
+            line-height: 24px;
+        }
+        textarea::placeholder {
+            color: #00FF00; /* Placeholder color */
+        }
+        textarea:focus::placeholder {
+            color: transparent; /* Hide placeholder text when textarea is focused */
+        }
+        textarea:focus {
+            border: none; /* Remove border on focus */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="initialText">
+            <p>You are standing in an open field west of a white house, with a boarded front door. There is a small mailbox here.</p>
+        </div>
+        <textarea id="prompt" placeholder=">"></textarea>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        // Function to handle prompt submission
+        function handlePromptSubmission(event) {
+            // If the user hits enter and not shift+enter
+            if (event.keyCode === 13 && !event.shiftKey) {
+                event.preventDefault(); // Prevent default form submission behavior
+                generateText(); // Call generateText function
+                // Clear textarea content
+                document.getElementById('prompt').value = '';
+                // Reset placeholder
+                document.getElementById('prompt').setAttribute('placeholder', '>');
+            }
+        }
+
+        // Function to generate text
+        function generateText() {
+            var initialText = document.getElementById('initialText').innerText.trim();
+            var userPrompt = document.getElementById('prompt').value.trim();
+
+            console.log('Reached generateText function');
+
+            fetch('http://34.16.203.86:5000/generate_text', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ initial_text: initialText, prompt: userPrompt })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update the initialText div with the generated text
+                console.log("Data: ", data.generated_text);
+                document.getElementById('initialText').innerHTML = '<p>' + data.generated_text + '</p>';
+            })
+            .catch(error => console.error('Error:', error));
+
+            console.log('Finished generateText function')
+        }
+
+        // Attach handlePromptSubmission function to keydown event of textarea
+        document.getElementById('prompt').addEventListener('keydown', handlePromptSubmission);
+
+        // Hide placeholder text when user starts typing
+        document.getElementById('prompt').addEventListener('input', function() {
+            this.placeholder = ''; // Remove placeholder text
+        });
+    </script>
+</body>
+</html>
