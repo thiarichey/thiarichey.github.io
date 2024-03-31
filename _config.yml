@@ -1,0 +1,6 @@
+# Enable CORS headers
+defaults:
+  - scope:
+      path: "/"
+    values:
+      access_control_allow_origin: "*"
