@@ -15,7 +15,6 @@ a:link {
   color: #434575; 
   background-color: transparent; 
   text-decoration: underline;
-  text-decoration-style: dotted;
 }
 
 header {
@@ -27,7 +26,6 @@ a:visited {
   color: #434575;
   background-color: transparent;
   text-decoration: underline;
-  text-decoration-style: dotted;
 }
 
 a:hover {
