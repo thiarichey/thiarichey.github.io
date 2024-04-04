@@ -12,9 +12,10 @@
 }
 
 a:link {
-  color: #444B74; 
+  color: #434575; 
   background-color: transparent; 
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-style: dotted;
 }
 
 header {
@@ -23,13 +24,14 @@ header {
 }
 
 a:visited {
-  color: #444B74;
+  color: #434575;
   background-color: transparent;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-style: dotted;
 }
 
 a:hover {
-  color: #727BAC;
+  color: #737492;
   background-color: transparent;
 }
 
